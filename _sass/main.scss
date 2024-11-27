@@ -3,13 +3,12 @@ body {
 }
 
 @import "https://unpkg.com/fixedsys-css/css/fixedsys.css";
+@font-face {
+  font-family:FixedSysEx,monospace
+}
 
 .current {
   color: green;
-}
-
-code,pre,body,html{
-  font-family:FixedSysEx,monospace
 }
 
 navbar {
