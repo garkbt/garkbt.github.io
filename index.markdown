@@ -5,6 +5,8 @@
 layout: home
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
 Hello and welcome, this is my blog where I shall some things that I learn.
 I chose the name simply due to the alliteration and because I love DFIR.
 Currently I'm not working in the role but I'm close enought to it that
