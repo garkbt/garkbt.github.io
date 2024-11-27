@@ -4,7 +4,8 @@ body {
 
 @import "https://unpkg.com/fixedsys-css/css/fixedsys.css";
 @font-face {
-  font-family:FixedSysEx,monospace
+  font-family:FixedSysEx,
+  font-smooth:never,
 }
 
 .current {
