@@ -1,3 +1,7 @@
+body {
+  background-color: #a9a9a9
+}
+
 @import url('https://unpkg.com/fixedsys-css/css/fixedsys.css');
 
 .current {
@@ -15,6 +19,4 @@ code,pre,body,html{
   font-family:FixedSysEx,monospace
 }
 b,strong{font-weight:normal}
-body {
-  background-color: #a9a9a9
-}
+
