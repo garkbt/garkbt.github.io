@@ -27,7 +27,7 @@ twitter_username: garkbit_
 github_username: garkbt
 
 # Build settings
-theme: minima
+# theme: minima
 plugins:
   - jekyll-feed
 
