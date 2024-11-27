@@ -1,0 +1,19 @@
+/* assets/css/style.css */
+body {
+  background-color: #a9a9a9;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+  font-size: 2.5em;
+}
+
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
