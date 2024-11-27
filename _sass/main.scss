@@ -2,6 +2,17 @@
   color: green;
 }
 
+@font-face{
+  font-family:"FixedSysEx";
+  src:local('Fixedsys Excelsior 3.01-L2'),
+  local('Fixedsys Excelsior 3.01'),
+  local('FixedSysEx'),
+  url(FixedSysEx.ttf) format('truetype')
+}
+code,pre,body,html{
+  font-family:FixedSysEx,monospace
+}
+b,strong{font-weight:normal}
 body {
   background-color: #a9a9a9
 }
