@@ -21,8 +21,8 @@
 title: Blogs on Bits
 description: >- # this means to ignore newlines until "baseurl:"
   A blog about Malware, DFIR, threat detection and who knows what else. 
-  #baseurl: "" # the subpath of your site, e.g. /blog
-  #url: "" # the base hostname & protocol for your site, e.g. http://example.com
+  # baseurl: "" # the subpath of your site, e.g. /blog
+  # url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: garkbit_
 github_username: garkbt
 
