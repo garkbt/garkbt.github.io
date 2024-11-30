@@ -11,6 +11,11 @@ body {
   color: green;
 }
 
+.container {
+  display: flex;
+  gap: 0.625%;
+}
+
 navbar {
   display: block;
   color: white;
@@ -19,5 +24,6 @@ navbar {
   text-decoration: none;
   background-color: #4f4240;
   height: 200px; 
+  a.link: 200px; 
 }
 
