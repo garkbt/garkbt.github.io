@@ -24,6 +24,8 @@ navbar {
   text-decoration: none;
   background-color: #4f4240;
   height: 200px; 
-  a.link: 200px; 
+  a.link: {
+    color: #cac4c3 
+  }
 }
 
