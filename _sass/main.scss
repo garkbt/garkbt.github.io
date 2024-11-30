@@ -16,7 +16,7 @@ body {
   gap: 0.625%;
 }
 
-navbar {
+.navbar {
   display: block;
   color: white;
   text-align: center;
@@ -26,11 +26,11 @@ navbar {
   height: 200px; 
 }
 
-navbar a {
+.navbar a {
   color: #cac4c3
 }
 
-navbar a:hover {
+.navbar a:hover {
   color: #87c765
 }
 
