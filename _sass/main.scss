@@ -12,6 +12,16 @@ body {
   font-smooth: never;
 }
 
+.content-block {
+  background-color: #4CAF50; /* green background for the block */
+  color: white; /* text color inside the block */
+  padding: 20px;
+  border-radius: 10px; /* optional rounded corners */
+  width: 60%; /* width of the block */
+  max-width: 600px; /* optional max width */
+  text-align: center; /* optional, centers text */
+}
+
 .current {
   color: green;
 }
