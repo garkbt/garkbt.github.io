@@ -16,6 +16,14 @@ body {
   color: green;
 }
 
+.ul {
+  list-style-type: none:
+}
+
+.li {
+  padding-inline: 10px
+}
+
 .navbar {
   display: flex; // Align navbar items horizontally
   justify-content: center; // Center the navbar within its container (optional)
