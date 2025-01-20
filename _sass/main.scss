@@ -16,7 +16,6 @@ body {
   color: green;
 }
 
-
 .navbar {
   display: block;
   color: white;
@@ -25,13 +24,28 @@ body {
   background-color: #4f4240;
   font-size: 17px;
   padding: 14px;
-}
+  
+  .navbar-list {
+    list-style-type: none; // Remove bullet points
+    margin: 0;
+    padding: 0;
+    display: flex; // Align list items horizontally
 
-.navbar a {
-  color: #cac4c3;
+    li {
+      margin-right: 20px; // Add space between list items (you can adjust the value)
+      
+      &:last-child {
+        margin-right: 0; // Remove margin from the last item
+      }
+      
+      a {
+        text-decoration: none;
+        color: #cac4c3; // Change color as needed
+      }
+      
+      a:hover {
+        color: #87c765;
+      }
+    }
+  }
 }
-
-.navbar a:hover {
-  color: #87c765;
-}
-
