@@ -1,5 +1,5 @@
-<nav class="navbar, navbar-list">
-  <ul>
+<nav class="navbar">
+  <ul class="navbar-list">
     {% for item in site.data.navigation %}
     <li>
       <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>
