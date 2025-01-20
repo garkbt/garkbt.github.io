@@ -58,6 +58,10 @@ body {
         text-decoration: none; // Remove underline from links
         color: #cac4c3; // Change color of links
         transition: color 0.3s ease; // Smooth color transition on hover
+
+        current {
+          color: green;
+        }
       }
       
       a:hover {
