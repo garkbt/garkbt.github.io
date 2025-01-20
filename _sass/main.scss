@@ -17,11 +17,8 @@ body {
 }
 
 .ul {
-  list-style-type: none:
-}
-
-.li {
-  padding-inline: 10px
+  list-style-type: none;
+  display: flex;
 }
 
 .navbar {
@@ -40,7 +37,8 @@ body {
     display: flex; // Align list items horizontally
 
     li {
-      margin-right: 20px; // Add space between list items (you can adjust the value)
+      //margin-right: 20px; // Add space between list items (you can adjust the value)
+      padding-inline: 10px;
 
       &:last-child {
         margin-right: 0; // Remove margin from the last item
