@@ -10,11 +10,16 @@ body {
   font-family: 'VT323';
   font-size: 16px;
   font-smooth: never;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  margin: 0;
 }
 
 .content-block {
   background-color: #4CAF50; /* green background for the block */
-  color: white; /* text color inside the block */
+  color: "black"; /* text color inside the block */
   padding: 20px;
   border-radius: 10px; /* optional rounded corners */
   width: 60%; /* width of the block */
