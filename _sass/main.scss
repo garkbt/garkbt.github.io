@@ -17,10 +17,10 @@ body {
 }
 
 .navbar {
-  display: block;
+  display: flex; // Align navbar items horizontally
+  justify-content: center; // Center the navbar within its container (optional)
+  align-items: center; // Vertically center items within the navbar
   color: white;
-  text-align: center;
-  text-decoration: none;
   background-color: #4f4240;
   font-size: 17px;
   padding: 14px;
@@ -33,19 +33,21 @@ body {
 
     li {
       margin-right: 20px; // Add space between list items (you can adjust the value)
-      
+
       &:last-child {
         margin-right: 0; // Remove margin from the last item
       }
       
       a {
-        text-decoration: none;
-        color: #cac4c3; // Change color as needed
+        text-decoration: none; // Remove underline from links
+        color: #cac4c3; // Change color of links
+        transition: color 0.3s ease; // Smooth color transition on hover
       }
       
       a:hover {
-        color: #87c765;
+        color: #87c765; // Color change on hover
       }
     }
   }
 }
+
