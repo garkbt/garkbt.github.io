@@ -53,3 +53,4 @@ plugins:
 highlighter: rouge
 kramdown:
   hard_wrap: true
+  syntax_highlighter: coderay
