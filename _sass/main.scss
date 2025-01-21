@@ -10,6 +10,9 @@ body {
   font-family: 'VT323';
   font-size: 16px;
   font-smooth: never;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .content-block {
@@ -72,8 +75,8 @@ body {
 }
 
 footer {
-    clear: both;
-    position: relative;
-    height: 200px;
-    margin-top: -200px;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
 }
