@@ -22,6 +22,10 @@ body {
   border-radius: 10px; /* optional rounded corners */
   height: 100%;
   text-align: left; /* optional, centers text */
+
+  h1 {
+    text-align: center;
+  }
 }
 
 .current {
