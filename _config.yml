@@ -53,5 +53,5 @@ plugins:
 highlighter: rouge
 kramdown:
   hard_wrap: true
-  syntax_highlighter: coderay
+  syntax_highlighter: rouge
   input: GFM
