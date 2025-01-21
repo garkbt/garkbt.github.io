@@ -18,7 +18,7 @@ body {
 .content-block {
   background-color: #ededec; /* green background for the block */
   color: "black"; /* text color inside the block */
-  padding: 20px;
+  padding-inline: 33%;
   border-radius: 10px; /* optional rounded corners */
   height: 100%;
   text-align: left; /* optional, centers text */
@@ -78,5 +78,4 @@ pre,
 code {
   font-size: 0.9375em;
   border-radius: 3px;
-  background-color: #dadfda;
 }
