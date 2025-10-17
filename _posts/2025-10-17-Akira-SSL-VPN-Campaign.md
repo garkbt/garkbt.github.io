@@ -9,18 +9,18 @@ The goal of this blog is to convey a timeline, share observations and discuss me
 It's been a tough few months for those with SSL-VPNs as some of them have been being heavily targeted by ransomware operators using Akira ransomware. The real cluster of activity started around the end of July with an uptick in SSL-VPN compromises being reported by MDR vendors before a notice was shortly published by SonicWall. A visual of this increase can be observed in the diagram shared in the first Huntress blog.  It was not just the Sonicwalls that this group has been targeting though, they have also been compromising Watchguard and Cisco ASA vpns as well(ZenSec). With this huge uptick in compromises the hypothesis of a zero-day was being thrown around, as the threat actors were observed using an over privileged LDAP bind or service account used by the SonicWall device.:
 
 <br>
-- 1/8/25 - Arctic Wolf publishes initial report of uptick in compromises https://arcticwolf.com/resources/blog/arctic-wolf-observes-july-2025-uptick-in-akira-ransomware-activity-targeting-sonicwall-ssl-vpn/
-- 4/8/25 - Huntress blog released (https://www.huntress.com/blog/exploitation-of-sonicwall-vpn)
-- 4/8/25 - Sonicwall Notice published (https://www.sonicwall.com/support/notices/gen-7-and-newer-sonicwall-firewalls-sslvpn-recent-threat-activity/250804095336430)
-- 5/8/25 - Guidepoint flags Malicious Drivers (https://www.guidepointsecurity.com/blog/gritrep-akira-sonicwall/)
-- 5/8/25 - Field Effect blog released (https://fieldeffect.com/blog/update-akira-ransomware-group-targets-sonicwall-vpn-appliances)
+- 1/8/25 - [Arctic Wolf publishes initial report of uptick in compromises](https://arcticwolf.com/resources/blog/arctic-wolf-observes-july-2025-uptick-in-akira-ransomware-activity-targeting-sonicwall-ssl-vpn/)
+- 4/8/25 - [Huntress blog released](https://www.huntress.com/blog/exploitation-of-sonicwall-vpn)
+- 4/8/25 - [Sonicwall Notice published](https://www.sonicwall.com/support/notices/gen-7-and-newer-sonicwall-firewalls-sslvpn-recent-threat-activity/250804095336430)
+- 5/8/25 - [Guidepoint flags Malicious Drivers](https://www.guidepointsecurity.com/blog/gritrep-akira-sonicwall/)
+- 5/8/25 - [Field Effect blog released](https://fieldeffect.com/blog/update-akira-ransomware-group-targets-sonicwall-vpn-appliances)
 
 After the initial wave some more reporting occurred with Australia being targeted and some additional blogs from Zensec and DarkTrace
-- 10/9/25 - ACSC alert of exploitation in Australia https://www.cyber.gov.au/about-us/view-all-content/alerts-and-advisories/ongoing-active-exploitation-of-sonicwall-ssl-vpns-in-australia
-- 10/9/25 - rapid7 blog released (https://www.rapid7.com/blog/post/dr-akira-ransomware-group-utilizing-sonicwall-devices-for-initial-access/)
-- 19/9/25 - Zensec blog released (https://zensec.co.uk/blog/unmasking-akira-the-ransomware-tactics-you-cant-afford-to-ignore/)
-- 26/9/25 - Arctic wolf relases another blog (https://arcticwolf.com/resources/blog/smash-and-grab-aggressive-akira-campaign-targets-sonicwall-vpns/)
-- 9/10/25 - Darktrace blog released (https://www.darktrace.com/blog/inside-akiras-sonicwall-campaign-darktraces-detection-and-response)
+- 10/9/25 - [ACSC alert of exploitation in Australia(https://www.cyber.gov.au/about-us/view-all-content/alerts-and-advisories/ongoing-active-exploitation-of-sonicwall-ssl-vpns-in-australia)
+- 10/9/25 - [rapid7 blog released](https://www.rapid7.com/blog/post/dr-akira-ransomware-group-utilizing-sonicwall-devices-for-initial-access/)
+- 19/9/25 - [Zensec blog released](https://zensec.co.uk/blog/unmasking-akira-the-ransomware-tactics-you-cant-afford-to-ignore/)
+- 26/9/25 - [Arctic wolf relases another blog](https://arcticwolf.com/resources/blog/smash-and-grab-aggressive-akira-campaign-targets-sonicwall-vpns/)
+- 9/10/25 - [Darktrace blog released](https://www.darktrace.com/blog/inside-akiras-sonicwall-campaign-darktraces-detection-and-response)
 
 Then there was more bad news with a threat actor getting access to Sonicwall's cloud backup of customer configs.
 - 17/9/25 - Initial brief by Sonicwall on compromise (https://www.cisa.gov/news-events/alerts/2025/09/22/sonicwall-releases-advisory-customers-after-security-incident)
@@ -518,12 +518,8 @@ AS62240 - Clouvider - 194.33.45.0/24
 Indicator	ASN	Type	Description
 155.117.117[.]34	AS215703 – ALEXANDRU VLAD trading as FREAKHOSTING	IPv4 Address	VPN Client IP
 45.66.249[.]93	AS62005 – Bluevps Ou	IPv4 Address	VPN Client IP
-193.239.236[.]149	AS62240 – Clouvider Limited	IPv4 Address	VPN Client IP
-193.163.194[.]7	AS62240 – Clouvider Limited	IPv4 Address	VPN Client IP
-194.33.45[.]194	AS62240 – Clouvider Limited	IPv4 Address	VPN Client IP
 31.222.247[.]64	AS62240 – Clouvider Limited	IPv4 Address	VPN Client IP
 62.76.147[.]106	AS62240 – Clouvider Limited	IPv4 Address	VPN Client IP
-77.247.126[.]239	AS62240 – Clouvider Limited	IPv4 Address	VPN Client IP
 83.229.17[.]123	AS62240 – Clouvider Limited	IPv4 Address	VPN Client IP
 83.229.17[.]135	AS62240 – Clouvider Limited	IPv4 Address	VPN Client IP
 83.229.17[.]148	AS62240 – Clouvider Limited	IPv4 Address	VPN Client IP
