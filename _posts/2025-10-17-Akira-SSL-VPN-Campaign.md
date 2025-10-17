@@ -56,18 +56,18 @@ They have maintained the same TTPs for a while, particularly how they target ESX
 They also move particularly quickly in an environment and can ransom a business in a few hours. 
 
 Mandiant shared in their Mtrends report that they track two clusters of Akira:
- - UNC5277
 
-    - Leverages stolen credentials for vpns, uses publicly available tools for recon, priv esc and persistence.
-    - Exploits CVE-2023-27532 (https://github.com/sadshade/veeam-creds)
-    - Has used winscp for exfil
+- UNC5277
+
+  - Leverages stolen credentials for vpns, uses publicly available tools for recon, priv esc and persistence.
+  - Exploits CVE-2023-27532 (https://github.com/sadshade/veeam-creds)
+  - Has used winscp for exfil
     
- - UNC5280
-
-    - Leveraged valid vpn credentials to gain access
-    - Deletes forensic artifacts
-    - Used metasploit
-    - ssh connection via FreeSShd or mobaxterm
+- UNC5280
+  - Leveraged valid vpn credentials to gain access
+  - Deletes forensic artifacts
+  - Used metasploit
+  - ssh connection via FreeSShd or mobaxterm
 
 
 From the blogs listed above there are a lot of different tactic, techniques and procedures(TTPs) which I have tried to pull together below.
