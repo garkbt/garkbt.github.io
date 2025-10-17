@@ -8,6 +8,7 @@ The goal of this blog is to convey a timeline, share observations and discuss me
 
 It's been a tough few months for those with SSL-VPNs as some of them have been being heavily targeted by ransomware operators using Akira ransomware. The real cluster of activity started around the end of July with an uptick in SSL-VPN compromises being reported by MDR vendors before a notice was shortly published by SonicWall. A visual of this increase can be observed in the diagram shared in the first Huntress blog.  It was not just the Sonicwalls that this group has been targeting though, they have also been compromising Watchguard and Cisco ASA vpns as well(ZenSec). With this huge uptick in compromises the hypothesis of a zero-day was being thrown around, as the threat actors were observed using an over privileged LDAP bind or service account used by the SonicWall device.:
 
+<br>
 - 1/8/25 - Arctic Wolf publishes initial report of uptick in compromises https://arcticwolf.com/resources/blog/arctic-wolf-observes-july-2025-uptick-in-akira-ransomware-activity-targeting-sonicwall-ssl-vpn/
 - 4/8/25 - Huntress blog released (https://www.huntress.com/blog/exploitation-of-sonicwall-vpn)
 - 4/8/25 - Sonicwall Notice published (https://www.sonicwall.com/support/notices/gen-7-and-newer-sonicwall-firewalls-sslvpn-recent-threat-activity/250804095336430)
@@ -132,7 +133,7 @@ Impact
 ~~~
 
 # Tools
-
+<br>
 **Discovery**:
 - Softperfect Network Scanner
 - Advanced_IP-scanner
@@ -144,12 +145,14 @@ Impact
 - SharpHound
 - RVTools
 - ldapdomaindump
+<br>
 
 **Lateral Movement**
 - NetExec
 - PsExec
 - Impacket
 - Mobaxterm
+<br>
 
 **Exfil and Staging**
 - winrar
@@ -157,6 +160,7 @@ Impact
 - rclone
 - 7zip
 - bitwise ssh client
+<br>
 
 **Persistence**
 - anydesk
@@ -165,20 +169,24 @@ Impact
 - ssh
 - Ligolo-ng tunnel util
 - Cobalt Strike
+<br>
 
 **Credential Access**
 - veeam-creds ps1/exe
  - NTDS.dit , system hive extraction
  - Mimikatz
  - DCSync
+<br>
 
 **Impact**
 - Akira Ransomware
+<br>
 
 # Observations 
 **Initial Access**
  - SSl-VPN exploitation
  - Authentications from VPS (Listed ASNs at the bottome)
+<br>
 
 
 **Discovery**
@@ -231,6 +239,7 @@ C:\programdata\[redacted].txt
  - VirtualMachine enumeration was observed with RVTools
  - ldapdomaindump
 
+<br>
 
 **Lateral Movement**
  - RDP for hosts
@@ -241,6 +250,7 @@ C:\programdata\[redacted].txt
    - `C:\Windows\System32\cmd.exe /Q /c quser 1> \Windows\Temp\RANDOMIZED_STRING 2>&1 (Example of impacket)`
  - MobaXterm
  - WinRm using Ruby client
+<br>
 
  **Exfil and staging**
  - `"C:\Program Files\WinRAR\WinRAR.exe" a -ep1  -scul -r0 -iext -imon1 -- . X:\[Redacted]`
@@ -253,6 +263,7 @@ C:\programdata\[redacted].txt
  - 7zip
  - bitwise ssh client
  - browser (easyupload.io)
+<br>
 
 **Persistence**
 - `"C:\Windows\System32\msiexec.exe" /i "C:\ProgramData\OpenSSHa.msi"`
@@ -350,6 +361,7 @@ if %ERRORLEVEL% neq 0 (
 )
 ```
 
+<br>
 
 
 Impact
@@ -381,6 +393,8 @@ WmiObject`
  -  `Log-DD-MM-YYYY-HH-MM-SS.txt`.
 - `.akira` appended to files
 - dumps `akira_readme.txt` within each folder
+
+<br>
 
 Unsure:
 Elf `vmwaretools` (potential esxi ransomware file observed being pulled by TA from Darktrace)
