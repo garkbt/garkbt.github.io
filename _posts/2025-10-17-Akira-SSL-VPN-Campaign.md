@@ -322,9 +322,12 @@ Disabling Security software
 - Powershell scripts to set-mppreference options set to disable or $true depending
 - Created VMs to avoid EDR and encrypt via SMB were observed in hyperv environments
 - Disabling security in Nas products
-- ```reg add
+- Disabling UAC for local accounts
+```
+reg add
 \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Pol
-icies\\System\" /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1 /f``` (Disabling UAC for local accoutns)
+icies\\System\" /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1 /f
+```
 - BYOVD and ran consent.exe from EDR folders which loaded wmsgapi.dll or msimg32.dll which loaded the driver located in temp to disable edr
 - `C:\Users\REDACTED\AppData\Local\Temp\churchill_driver.sys`
 - `C:\Users\REDACTED\AppData\Local\Temp\rwdrv.sys`
