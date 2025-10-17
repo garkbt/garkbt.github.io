@@ -27,6 +27,8 @@ Then there was more bad news with a threat actor getting access to Sonicwall's c
 - 8/10/25 - Sonicwall updates a different blog that mandiant found access to firewall conf file for all customers using the cloud backup service.
 - Huntress blog (https://www.huntress.com/blog/sonicwall-sslvpn-compromise)
 
+<br>
+
 ## A not so Zero Day
 Despite concerns that it was a zero day, SonicWall published guidance that these compromises were actually the result of an older vulnerability: CVE-2024-40766 https://nvd.nist.gov/vuln/detail/cve-2024-40766
 It is an improper access control vulnerability in SonicOs management access, which can result in unauthorized resource access.
@@ -38,6 +40,8 @@ They have a great table if you are unsure if your platform and version pair is a
 https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0015
 
 It is interesting that there was such a gap between the publishing of this vulnerability and the compromises of these SonicWalls, did they grab credentials earlier and then once they were happy they had a good amount start compromising the networks?
+
+<br>
 
 ## Pirates of the Akira-bean
 Now Akira is not a new name and it has been around for a while, with indicators of being a descendent of Conti. If you want to learn more about their links to Conti I recommend reading this great blog by Bushido Token.
@@ -63,6 +67,8 @@ Mandiant shared in their Mtrends report that they track two clusters of Akira:
 
 
 From the blogs listed above there are a lot of different tactic, techniques and procedures(TTPs) which I have tried to pull together below.
+
+<br>
 
 ## MITRE MAPPING
 For a quick high overall view we can break down the TTPs to the following (Much thanks goes to all the hard work of those who added these to their blogs <3). From the blogs I listed I recommend checking out the ZenSec mitre view as it graphs out initial access to impact in a flow chart which is such a great readable way of doing it.
