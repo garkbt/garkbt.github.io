@@ -562,9 +562,10 @@ Indicator	ASN	Type	Description
 <br>
 
 ### MISC IOCs
-cloudflared token
-eyJhIjoiY2ZkNzlkNDEyYWFh**REDACTED**TVdZeE1USTJaR1E0WlRsaiJ9
-
+<br>
+**cloudflared token**
+- eyJhIjoiY2ZkNzlkNDEyYWFh**REDACTED**TVdZeE1USTJaR1E0WlRsaiJ9
+<br>
 This is unrelated but you see much of the same ttps in this DFIR report which came out just as the activity was ramping up
 - https://thedfirreport.com/2025/08/05/from-bing-search-to-ransomware-bumblebee-and-adaptixc2-deliver-akira/
 
