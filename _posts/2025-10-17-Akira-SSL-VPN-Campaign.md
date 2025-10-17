@@ -1,5 +1,3 @@
-# Akira SSl VPN Campaign
-
 Before I start just wanted to say a huge thank you to all those who put the effort into the blogs that have gone out already about this Akira campaign.  There were a lot of great blogs which show how rampant this was and helps us paint a picture of what they do.  I was going to try do this as last minute bsides talk but I ran out of time unfortunately.
 
 The goal of this blog is to convey a timeline, share observations and discuss methods to detect this activity early.  This blog is a personal research blog which contains publicly available indicators and is for the community <3
