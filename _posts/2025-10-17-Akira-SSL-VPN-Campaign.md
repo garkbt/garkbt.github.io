@@ -1,4 +1,3 @@
-# Akira SSl VPN Campaign
 
 Before I start just wanted to say a huge thank you to all those who put the effort into the blogs that have gone out already about this Akira campaign.  There were a lot of great blogs which show how rampant this was and helps us paint a picture of what they do.  I was going to try do this as last minute bsides talk but I ran out of time unfortunately.
 
@@ -66,7 +65,7 @@ From the blogs listed above there are a lot of different tactic, techniques and 
 
 ## MITRE MAPPING
 For a quick high overall view we can break down the TTPs to the following (Much thanks goes to all the hard work of those who added these to their blogs <3). From the blogs I listed I recommend checking out the ZenSec mitre view as it graphs out initial access to impact in a flow chart which is such a great readable way of doing it.
-
+```
 Reconnaissance          
                         T1590.002: Gather Victim Network Information: DNS (Reverse DNS Sweep)
                         T1590.005: Gather Victim Network Information: IP Addresses (Network Range Scan)
@@ -122,7 +121,7 @@ Impact
                         T1657: Financial Theft (double extortion)
                         T1490: Inhibit System Recovery (delete shadows)
                         T1561: Disk Wipe (NAS devices/backups)
-
+```
 
 # Tools
 
