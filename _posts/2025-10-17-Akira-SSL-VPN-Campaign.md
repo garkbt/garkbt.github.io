@@ -65,7 +65,7 @@ From the blogs listed above there are a lot of different tactic, techniques and 
 
 ## MITRE MAPPING
 For a quick high overall view we can break down the TTPs to the following (Much thanks goes to all the hard work of those who added these to their blogs <3). From the blogs I listed I recommend checking out the ZenSec mitre view as it graphs out initial access to impact in a flow chart which is such a great readable way of doing it.
-```
+~~~markdown
 Reconnaissance          
                         T1590.002: Gather Victim Network Information: DNS (Reverse DNS Sweep)
                         T1590.005: Gather Victim Network Information: IP Addresses (Network Range Scan)
@@ -121,7 +121,7 @@ Impact
                         T1657: Financial Theft (double extortion)
                         T1490: Inhibit System Recovery (delete shadows)
                         T1561: Disk Wipe (NAS devices/backups)
-```
+~~~
 
 # Tools
 
@@ -179,12 +179,12 @@ Discovery
  - Advanced_Port_Scanner
  - `Nltest /trusted_domains`
  - ping
- ```
+~~~markdown
 Install-WindowsFeature RSAT-AD-PowerShell
 Get-ADComputer -Filter * -Property * | Select-Object Enabled,
 DNSHostName, IPv4Address, OperatingSystem, Description  >
 C:\programdata\[redacted].txt
-```
+~~~
  - `cmd.exe /Q /c nltest /domain_trusts 1> \\Windows\\Temp\\ysKBfL 2>&1`
  - `cmd.exe /Q /c quser 1> \\127.0.0.1\ADMIN$\__1754125023.3698354 2>&1`
  - `net group "Domain admins" /dom`
@@ -440,7 +440,7 @@ rwdrv.sys  16f83f056177c4ec24c7e99d01ca9d9d6713bd0497eeedb777a3ffefa99c97f0
 
 
 ### Network IOCS
-```
+~~~markdown
 ASN , ORG
 AS199959 , CROWNCLOUD
 AS395092 , Shock Hosting LLC
@@ -506,7 +506,7 @@ Indicator	ASN	Type	Description
 170.130.165[.]42	AS62904 – Eonix Corporation	IPv4 Address	Command and Control
 162.210.196[.]101	AS30633 – Leaseweb Usa  Inc.	IPv4 Address	Exfiltration
 206.168.190[.]143	AS14315 – 1gservers  Llc	IPv4 Address	Exfiltration
-```
+~~~
 ### MISC IOCs
 cloudflared token
 eyJhIjoiY2ZkNzlkNDEyYWFh**REDACTED**TVdZeE1USTJaR1E0WlRsaiJ9
