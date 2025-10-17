@@ -57,10 +57,13 @@ They also move particularly quickly in an environment and can ransom a business 
 
 Mandiant shared in their Mtrends report that they track two clusters of Akira:
  - UNC5277
+
     - Leverages stolen credentials for vpns, uses publicly available tools for recon, priv esc and persistence.
     - Exploits CVE-2023-27532 (https://github.com/sadshade/veeam-creds)
     - Has used winscp for exfil
+    
  - UNC5280
+
     - Leveraged valid vpn credentials to gain access
     - Deletes forensic artifacts
     - Used metasploit
