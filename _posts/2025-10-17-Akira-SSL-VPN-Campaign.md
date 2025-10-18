@@ -32,14 +32,14 @@ Then there was more bad news with a threat actor getting access to Sonicwall's c
 <br>
 
 ## A not so Zero Day
-Despite concerns that it was a zero day, SonicWall published guidance that these compromises were actually the result of an older vulnerability: CVE-2024-40766 https://nvd.nist.gov/vuln/detail/cve-2024-40766
+Despite concerns that it was a zero day, SonicWall published guidance that these compromises were actually the result of an older vulnerability: [CVE-2024-40766]( https://nvd.nist.gov/vuln/detail/cve-2024-40766)
 It is an improper access control vulnerability in SonicOs management access, which can result in unauthorized resource access.
 It affects SonicWall Firewall Gen 5 and Gen 6, as well as Gen 7 devices with SonicOS 7.01-5035 and older.
 <br>
 The remediation guidance was updated by SonicWall which recommended updating the firmware version and resetting all local user account passwords for accounts with SSL VPN access.
 
 They have a great table if you are unsure if your platform and version pair is affected:
-https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0015
+- https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0015
 <br>
 It is interesting that there was such a gap between the publishing of this vulnerability and the compromises of these SonicWalls, did they grab credentials earlier and then once they were happy they had a good amount start compromising the networks?
 
