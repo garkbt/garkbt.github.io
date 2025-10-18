@@ -156,7 +156,7 @@ Impact
 - Advanced_Port_Scanner
 - Powerview
 - SharpShares
-- Grixba
+- Grixba- [Symantec](https://www.security.com/threat-intelligence/play-ransomware-volume-shadow-copy),[Field Effect](https://fieldeffect.com/blog/grixba-play-ransomware-impersonates-sentinelone)
 - PingCastle
 - SharpHound
 - RVTools
