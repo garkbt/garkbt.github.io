@@ -388,8 +388,8 @@ WmiObject
 - winlocker.exe
 - hello.exe
 - powershell.exe -ep bypass -Command "Get-WinEvent -ListLog * | where { $_.RecordCount } | ForEach-Object -Process{ [System.Diagnostics.Eventing.Reader.EventLogSession]::GlobalSession.ClearLog($_.LogName) }"
-- target backups, format/wip disks/ factory reset
-- differy scenarios:
+- target backups, format/wipe disks/ factory reset
+- Different scenarios:
    1: Virtual Disk level - vmdks are encrypted and laptops/desktops left unencypted
    2: Full environment encrypted (OS and vmdks)
    3: In-guest encrypion only - encrypts contents of vms rather than the underlying disk files
