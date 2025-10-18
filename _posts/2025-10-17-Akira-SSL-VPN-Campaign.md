@@ -1,15 +1,18 @@
+The goal of this blog is to convey a timeline, share observations and discuss methods to detect activity in recent Akira ransomware cases.  This blog is a personal research blog which contains publicly available indicators and is for the community <3
 <br>
-Before I start just wanted to say a huge thank you to all those who put the effort into the blogs that have gone out already about this Akira campaign.  There were a lot of great blogs which show how rampant this was and helps us paint a picture of what they do.  I was going to try do this as last minute bsides talk but I ran out of time unfortunately.
-
-The goal of this blog is to convey a timeline, share observations and discuss methods to detect this activity early.  This blog is a personal research blog which contains publicly available indicators and is for the community <3
+Before I start just wanted to say a huge thank you to all those who put the effort into the blogs that have gone out already about this Akira campaign.  There were a lot of great blogs which show how rampant this was and helps us paint a picture of their tools.  I was going to try do this as last minute Bsides talk but I ran out of time unfortunately.
 
 <br>
 
 ## Timeline
 <br>
-It's been a tough few months for those with SSL-VPNs as some of them have been being heavily targeted by ransomware operators using Akira ransomware. The real cluster of activity started around the end of July with an uptick in SSL-VPN compromises being reported by MDR vendors before a notice was shortly published by SonicWall. A visual of this increase can be observed in the diagram shared in the first Huntress blog.  It was not just the Sonicwalls that this group has been targeting though, they have also been compromising Watchguard and Cisco ASA vpns as well(ZenSec). With this huge uptick in compromises the hypothesis of a zero-day was being thrown around, as the threat actors were observed using an over privileged LDAP bind or service account used by the SonicWall device.:
+It's been a tough few months for those with SSL-VPNs as some of them have been being heavily targeted by ransomware operators using Akira ransomware. The real cluster of activity started around the end of July with an uptick in SSL-VPN compromises from SonicWall devices being reported by MDR vendors before a notice was shortly published by SonicWall. A visual of this increase can be observed in the diagram shared in the first Huntress blog.  It was not just the Sonicwalls that this group has been targeting though, they have also been compromising Watchguard and Cisco ASA vpns as well(ZenSec blog). 
+<br>
+With this huge uptick in compromises of SonicWall SSL-VPNs the hypothesis of a zero-day was being thrown around by muliple vendors, as the threat actors were observed using an over privileged LDAP bind or service account used by the SonicWall device. Below is a timeline around the exploited CVE-2024-40766.
 
 <br>
+- 22/8/24 - [Sonicwall notice published regard CVE-2024-40766](https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0015)
+- 09/9/24 - [CVE added to CISA known exploited vuln list](https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2024-40766)
 - 1/8/25 - [Arctic Wolf publishes initial report of uptick in compromises](https://arcticwolf.com/resources/blog/arctic-wolf-observes-july-2025-uptick-in-akira-ransomware-activity-targeting-sonicwall-ssl-vpn/)
 - 4/8/25 - [Huntress blog released](https://www.huntress.com/blog/exploitation-of-sonicwall-vpn)
 - 4/8/25 - [Sonicwall Notice published](https://www.sonicwall.com/support/notices/gen-7-and-newer-sonicwall-firewalls-sslvpn-recent-threat-activity/250804095336430)
@@ -40,8 +43,17 @@ The remediation guidance was updated by SonicWall which recommended updating the
 
 They have a great table if you are unsure if your platform and version pair is affected:
 - https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2024-0015
+
+Rapid7 observed the threat actors accessing the Virtual Office Portal which depending on how it is setup let's them reset mfa of ssl-vpn users.  They recommend not having this exposed to the internet and to instead have it accessible from the local network.
 <br>
-It is interesting that there was such a gap between the publishing of this vulnerability and the compromises of these SonicWalls, did they grab credentials earlier and then once they were happy they had a good amount start compromising the networks?
+Then there was a big update with the discovery that SonicWall customer backup configurations were accessed in a security incident. Now this makes it look like the two may be related but there is no evidence to prove that. The configurations have encrypted data in them, but having the configs accessible opens up a customer to be targeted.
+
+Huntress in their blog do mention that the threat actors were not been brute forcing and instead using legitimate credentials to authenticate to the SSL VPN. Sometimes just logging in and doing nothing else.
+
+They updated their advice on their blog with how to remediate this config exposure.
+- https://www.huntress.com/blog/sonicwall-sslvpn-compromise
+
+  
 
 <br>
 
@@ -138,7 +150,7 @@ Impact
 
 ## Tools
 <br>
-**Discovery**:
+**Discovery**
 - Softperfect Network Scanner
 - Advanced_IP-scanner
 - Advanced_Port_Scanner
