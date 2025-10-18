@@ -18,7 +18,7 @@ It's been a tough few months for those with SSL-VPNs as some of them have been b
 <br>
 After the initial wave some more reporting occurred with Australia being targeted and some additional blogs from Zensec and DarkTrace
 - 10/9/25 - [ACSC alert of exploitation in Australia](https://www.cyber.gov.au/about-us/view-all-content/alerts-and-advisories/ongoing-active-exploitation-of-sonicwall-ssl-vpns-in-australia)
-- 10/9/25 - [rapid7 blog released](https://www.rapid7.com/blog/post/dr-akira-ransomware-group-utilizing-sonicwall-devices-for-initial-access/)
+- 10/9/25 - [Rapid7 blog released](https://www.rapid7.com/blog/post/dr-akira-ransomware-group-utilizing-sonicwall-devices-for-initial-access/)
 - 19/9/25 - [Zensec blog released](https://zensec.co.uk/blog/unmasking-akira-the-ransomware-tactics-you-cant-afford-to-ignore/)
 - 26/9/25 - [Arctic wolf relases another blog](https://arcticwolf.com/resources/blog/smash-and-grab-aggressive-akira-campaign-targets-sonicwall-vpns/)
 - 9/10/25 - [Darktrace blog released](https://www.darktrace.com/blog/inside-akiras-sonicwall-campaign-darktraces-detection-and-response)
