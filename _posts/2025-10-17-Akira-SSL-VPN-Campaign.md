@@ -25,7 +25,7 @@ After the initial wave some more reporting occurred with Australia being targete
 <br>
 Then there was more bad news with a threat actor getting access to Sonicwall's cloud backup of customer configs.
 - 17/9/25 - [Initial brief by Sonicwall on compromise](https://www.sonicwall.com/support/knowledge-base/mysonicwall-cloud-backup-file-incident/250915160910330))
-- 22/9/25 - [CISA shares Sonicwall Advisory https://www.cisa.gov/news-events/alerts/2025/09/22/sonicwall-releases-advisory-customers-after-security-incident
+- 22/9/25 - [CISA shares Sonicwall Advisory](https://www.cisa.gov/news-events/alerts/2025/09/22/sonicwall-releases-advisory-customers-after-security-incident
 - 8/10/25 - Sonicwall updates their brief noting that mandiant found access to firewall conf file for all customers using the cloud backup service
 - 8/10/25 - [Huntress blog](https://www.huntress.com/blog/sonicwall-sslvpn-compromise)
 
